@@ -1,0 +1,21 @@
+services:
+  arena:
+    build: .
+    image: llm-redteam-arena
+    ports:
+      # Host port 17860: Windows (Hyper-V/WSL) can reserve any port in 1024-15000 on this PC
+      - "17860:7860"
+    # GROQ_API_KEY etc. come from .env if it exists. With no key, ARENA_BACKEND=auto
+    # falls back to the offline mock backend.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      ARENA_BACKEND: ${ARENA_BACKEND:-auto}
+    volumes:
+      - arena-data:/app/data           # SQLite DB + LLM cache survive restarts
+      - ./results:/app/results:ro      # benchmark results shown in the app
+    restart: unless-stopped
+
+volumes:
+  arena-data:

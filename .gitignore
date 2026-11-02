@@ -1,0 +1,21 @@
+# secrets
+.env
+
+# local game data (holds player messages and session passwords)
+*.sqlite3*
+*.db
+data/
+cache/
+
+# python / tooling
+.venv/
+__pycache__/
+.pytest_cache/
+.hf/
+
+# raw benchmark logs (large)
+results/*.jsonl
+
+# local build helpers
+build.log
+build.ps1
