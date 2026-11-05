@@ -3,7 +3,10 @@
 **A prompt-injection game.** Talk an AI guard into spilling its secret password, then try again
 against five levels of stronger and stronger defenses.
 
-![Prompt Heist screenshot](assets/screenshot.jpg)
+<p align="center">
+  <a href="assets/demo.mp4"><img src="assets/demo.gif" alt="Prompt Heist demo: playing all five levels" width="720"></a>
+</p>
+<p align="center"><i>Demo of all five levels (shown at 2x speed). <a href="assets/demo.mp4">Watch the full video</a>.</i></p>
 
 Prompt injection is the top security risk for apps built on large language models: users hide
 instructions in their messages to make the model break its own rules. Prompt Heist turns that
@@ -210,7 +213,7 @@ phone width.
 
 ```
 app.py                  Gradio UI (theme, CSS and layout)
-assets/                 vault logo, README screenshot
+assets/                 vault logo, demo video and GIF
 benchmark.py            runs the suites, writes results/
 config.py               settings from env / .env
 arena/backends.py       LLMBackend, Groq + mock, cache, throttle, retries
